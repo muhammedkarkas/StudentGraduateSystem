@@ -3,7 +3,7 @@ public class Course {
     String name;
     String code;
     String prefix;
-    int note;
+    double note;
 
     public Course(String name, String code, String prefix) {
         this.name = name;
@@ -15,17 +15,17 @@ public class Course {
     public void addTeacher(Teacher t) {
         if (this.prefix.equals(t.branch)) {
             this.courseTeacher = t;
-            System.out.println("İşlem başarılı");
+            System.out.println("Process Successful");
         } else {
-            System.out.println(t.name + " Akademisyeni bu dersi veremez.");
+            System.out.println(t.name + " Academician cannot teach this course.");
         }
     }
 
     public void printTeacher() {
         if (courseTeacher != null) {
-            System.out.println(this.name + " dersinin Akademisyeni : " + courseTeacher.name);
+            System.out.println(this.name + " academician of the course : " + courseTeacher.name);
         } else {
-            System.out.println(this.name + " dersine Akademisyen atanmamıştır.");
+            System.out.println(this.name + " No Academician has been assigned to the course..");
         }
     }
 

@@ -1,57 +1,57 @@
 public class Student {
     String name,stuNo;
     int classes;
-    Course mat;
-    Course fizik;
-    Course kimya;
+    Course math;
+    Course physics;
+    Course chemical;
     double avarage;
     boolean isPass;
 
 
-    public Student(String name, int classes, String stuNo, Course mat,Course fizik,Course kimya) {
+    public Student(String name, int classes, String stuNo, Course math,Course physics,Course chemical) {
         this.name = name;
         this.classes = classes;
         this.stuNo = stuNo;
-        this.mat = mat;
-        this.fizik = fizik;
-        this.kimya = kimya;
+        this.math = math;
+        this.physics = physics;
+        this.chemical = chemical;
         calcAvarage();
         this.isPass = false;
     }
 
-    public void addBulkExamNote(int mat, int fizik, int kimya) {
+    public void addBulkExamNote(int mat, int physics, int chemical) {
 
         if (mat >= 0 && mat <= 100) {
-            this.mat.note = mat;
+            this.math.note = mat;
         }
 
-        if (fizik >= 0 && fizik <= 100) {
-            this.fizik.note = fizik;
+        if (physics >= 0 && physics <= 100) {
+            this.physics.note = physics;
         }
 
-        if (kimya >= 0 && kimya <= 100) {
-            this.kimya.note = kimya;
+        if (chemical >= 0 && chemical <= 100) {
+            this.chemical.note = chemical;
         }
 
     }
 
     public void isPass() {
-        if (this.mat.note == 0 || this.fizik.note == 0 || this.kimya.note == 0) {
-            System.out.println("Notlar tam olarak girilmemiş");
+        if (this.math.note == 0 || this.physics.note == 0 || this.chemical.note == 0) {
+            System.out.println("Grades not fully entered");
         } else {
             this.isPass = isCheckPass();
             printNote();
-            System.out.println("Ortalama : " + this.avarage);
+            System.out.println("Average : " + this.avarage);
             if (this.isPass) {
-                System.out.println("Sınıfı Geçti. ");
+                System.out.println("Passed the class. ");
             } else {
-                System.out.println("Sınıfta Kaldı.");
+                System.out.println("Failed in Class.");
             }
         }
     }
 
     public void calcAvarage() {
-        this.avarage = (this.fizik.note + this.kimya.note + this.mat.note) / 3;
+        this.avarage = (this.physics.note + this.chemical.note + this.math.note) / 3;
     }
 
     public boolean isCheckPass() {
@@ -61,10 +61,10 @@ public class Student {
 
     public void printNote(){
         System.out.println("=========================");
-        System.out.println("Öğrenci : " + this.name);
-        System.out.println("Matematik Notu : " + this.mat.note);
-        System.out.println("Fizik Notu : " + this.fizik.note);
-        System.out.println("Kimya Notu : " + this.kimya.note);
+        System.out.println("Student : " + this.name);
+        System.out.println("Math Note : " + this.math.note);
+        System.out.println("Physics Note : " + this.physics.note);
+        System.out.println("Chemical Note : " + this.chemical.note);
     }
 
 }
