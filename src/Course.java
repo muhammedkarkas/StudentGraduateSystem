@@ -4,12 +4,18 @@ public class Course {
     String code;
     String prefix;
     double note;
+    double speakNote;
+    double notePercent;
+    double speakNotePercent;
 
-    public Course(String name, String code, String prefix) {
+    public Course(String name, String code, String prefix,double notePercent, double speakNotePercent) {
         this.name = name;
         this.code = code;
         this.prefix = prefix;
         this.note = 0;
+        this.speakNote = 0;
+        this.notePercent = notePercent;
+        this.speakNotePercent = speakNotePercent;
     }
 
     public void addTeacher(Teacher t) {
